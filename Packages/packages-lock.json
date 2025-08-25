@@ -204,6 +204,13 @@
       },
       "url": "https://packages.unity.com"
     },
+    "fun.moonymachine.scrutable-objects": {
+      "version": "https://github.com/moonymachine/scrutable-objects.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "e525e73ba7845f2cd3da5bbc60c1fe52d1fb4cac"
+    },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",
       "depth": 0,
