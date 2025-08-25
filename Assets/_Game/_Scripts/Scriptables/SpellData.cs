@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Armazena as informações necessárias para castar uma spell
+/// </summary> <summary>
 [CreateAssetMenu(fileName = "_SpellData", menuName = "Scriptables/SpellData")]
 public class SpellData : ScriptableObject
 {
