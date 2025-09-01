@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Duca
+namespace SpellCaller
 {
     /// <summary>
     /// Responsável pela execução dos comportamentos relacionados a movimentação do player
@@ -9,14 +9,14 @@ namespace Duca
     public class PlayerMovement : MonoBehaviour
     {
         [Header("Parâmetros Movimento")]
-        [SerializeField] private float _moveSpeed = 5f;
-        [SerializeField] private float _acceleration = 10f;
-        [SerializeField] private float _deceleration = 10f;
+        [SerializeField] private float _maxSpeed;
+        [SerializeField] private float _acceleration;
+        [SerializeField] private float _deceleration;
 
         [Header("Parâmetros Pulo/Gravidade")]
-        [SerializeField] private float _jumpForce = 8f;
-        [SerializeField] private float _groundGravity = -2f;
-        [SerializeField] private float _gravityForce = -9.81f;
+        [SerializeField] private float _jumpForce;
+        [SerializeField] private float _groundGravity;
+        [SerializeField] private float _gravityForce;
 
         [Header("Referências")]
         [SerializeField] private CharacterController _characterController;
@@ -25,9 +25,8 @@ namespace Duca
 
         // Não serializadas
         private Vector2 _moveInput = Vector2.zero;
-        private Vector3 _curHorizontalSpeed = Vector3.zero;
-        private Vector3 _targetHorizontalSpeed = Vector3.zero;
-        private float _curVerticalSpeed;
+        private Vector3 _curSpeed = Vector3.zero;
+        private float _curGravity;
 
         private void OnValidate() => _characterController = GetComponent<CharacterController>();
 
@@ -69,30 +68,35 @@ namespace Duca
 
         private void ApplyMovement()
         {
-            _targetHorizontalSpeed = new Vector3(_moveInput.x, 0f, _moveInput.y) * _moveSpeed;
+            Vector3 targetHorizontalSpeed = (transform.right * _moveInput.x + transform.forward * _moveInput.y) * _maxSpeed;
 
-            if (_targetHorizontalSpeed.magnitude > 0.1f)
-                _curHorizontalSpeed = Vector3.Lerp(_curHorizontalSpeed, _targetHorizontalSpeed, _acceleration * Time.deltaTime);
+            if (targetHorizontalSpeed.magnitude > 0.1f)
+                _curSpeed = Vector3.Lerp(_curSpeed, targetHorizontalSpeed, _acceleration * Time.deltaTime);
             else
-                _curHorizontalSpeed = Vector3.Lerp(_curHorizontalSpeed, Vector3.zero, _deceleration * Time.deltaTime);
+                _curSpeed = Vector3.Lerp(_curSpeed, Vector3.zero, _deceleration * Time.deltaTime);
 
-            _characterController.Move(_curHorizontalSpeed * Time.deltaTime);
+            _characterController.Move(_curSpeed * Time.deltaTime);
         }
 
         private void ApplyJump()
         {
             if (_characterController.isGrounded)
-                _curVerticalSpeed = _jumpForce;
+                _curGravity = _jumpForce;
         }
 
         private void ApplyGravity()
         {
-            if (_characterController.isGrounded && _curVerticalSpeed < 0)
-                _curVerticalSpeed = _groundGravity;
+            if (_characterController.isGrounded && _curGravity < 0)
+                _curGravity = _groundGravity;
 
-            _curVerticalSpeed += _gravityForce * Time.deltaTime;
+            _curGravity += _gravityForce * Time.deltaTime;
 
-            _characterController.Move(Vector3.up * _curVerticalSpeed * Time.deltaTime);
+            _characterController.Move(Vector3.up * _curGravity * Time.deltaTime);
+        }
+
+        public bool IsMoving()
+        {
+            return _curSpeed.magnitude > 0.01f;
         }
 
         #endregion

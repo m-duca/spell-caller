@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Windows.Speech;
 
-namespace Duca
+namespace SpellCaller
 {
     /// <summary>
     /// Responsável pelo acionamento de spells via reconhecimento de voz

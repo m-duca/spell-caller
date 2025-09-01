@@ -236,7 +236,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df99fb2a32165514dbbf7017dadd5867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  _moveSpeed: 20
+  _maxSpeed: 5
+  _acceleration: 10
+  _deceleration: 10
   _jumpForce: 5
   _groundGravity: -2
   _gravityForce: -9.81
@@ -304,6 +306,8 @@ GameObject:
   - component: {fileID: 2625398078943990982}
   - component: {fileID: 5721445167857199119}
   - component: {fileID: 5655573087867918831}
+  - component: {fileID: 2607481261093716073}
+  - component: {fileID: 8663251877929325361}
   m_Layer: 0
   m_Name: Main_Camera
   m_TagString: MainCamera
@@ -430,3 +434,39 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &2607481261093716073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6452881379417458719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7d3a5b3996ec1f42826ec6d7798ef90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  _sensitivity: 0.8
+  _acceleration: 35
+  _deceleration: 15
+  _minPitch: -90
+  _maxPitch: 90
+  _playerTransf: {fileID: 1575118480062824707}
+  _lookAction: {fileID: -5630151704836100654, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+--- !u!114 &8663251877929325361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6452881379417458719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dae50faaf2faab1449184562f312ca2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpellCaller.CameraHeadbob
+  _bobAmountY: 0.05
+  _bobAmountX: 0.03
+  _baseBobDuration: 0.3
+  _returnDuration: 0.2
+  _playerMovement: {fileID: 6155800142942686647}

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Duca
+namespace SpellCaller
 {
     /// <summary>
     /// Armazena as informações necessárias para castar uma spell
