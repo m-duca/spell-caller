@@ -237,8 +237,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   _moveSpeed: 20
+  _jumpForce: 5
+  _groundGravity: -2
+  _gravityForce: -9.81
   _characterController: {fileID: 1348172252982959254}
   _moveAction: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  _jumpAction: {fileID: -2099379676528639254, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!1 &4430511974180950042
 GameObject:
   m_ObjectHideFlags: 0
