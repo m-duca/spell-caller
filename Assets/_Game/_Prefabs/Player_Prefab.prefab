@@ -53,7 +53,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 996388739226142456}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 5721445167857199119}
   - component: {fileID: 5655573087867918831}
   - component: {fileID: 2607481261093716073}
-  - component: {fileID: 8663251877929325361}
+  - component: {fileID: 7487005948218795820}
   m_Layer: 0
   m_Name: Main_Camera
   m_TagString: MainCamera
@@ -446,14 +446,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7d3a5b3996ec1f42826ec6d7798ef90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  _sensitivity: 0.8
-  _acceleration: 35
-  _deceleration: 15
+  _sensitivity: 0.1
   _minPitch: -90
   _maxPitch: 90
   _playerTransf: {fileID: 1575118480062824707}
   _lookAction: {fileID: -5630151704836100654, guid: 052faaac586de48259a63d0c4782560b, type: 3}
---- !u!114 &8663251877929325361
+--- !u!114 &7487005948218795820
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -462,11 +460,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6452881379417458719}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dae50faaf2faab1449184562f312ca2b, type: 3}
+  m_Script: {fileID: 11500000, guid: a89021b6c154e5e4e8e0e8f75ce2b4eb, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpellCaller.CameraHeadbob
-  _bobAmountY: 0.05
-  _bobAmountX: 0.03
-  _baseBobDuration: 0.3
-  _returnDuration: 0.2
-  _playerMovement: {fileID: 6155800142942686647}
+  m_EditorClassIdentifier: '::'
+  _isShowing: 0

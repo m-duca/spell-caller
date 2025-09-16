@@ -21,8 +21,6 @@ namespace SpellCaller
         private float _xRotation;
         private Vector2 _lookInput;
 
-        private void Start() => HideCursor();
-
         private void OnEnable() => _lookAction.action.Enable();
         
         private void OnDisable() => _lookAction.action.Disable();
@@ -45,12 +43,6 @@ namespace SpellCaller
             _xRotation = Mathf.Clamp(_xRotation, _minPitch, _maxPitch);
 
             transform.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
-        }
-
-        private void HideCursor()
-        {
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 }
