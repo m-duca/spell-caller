@@ -242,9 +242,13 @@ MonoBehaviour:
   _jumpForce: 5
   _groundGravity: -2
   _gravityForce: -9.81
+  _headBobIntensity: 0.12
+  _headBobSpeed: 4
+  _headBobStopDuration: 1
   _characterController: {fileID: 1348172252982959254}
   _moveAction: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   _jumpAction: {fileID: -2099379676528639254, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  _cameraShake: {fileID: 8291035406395617212}
 --- !u!1 &4430511974180950042
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,6 +312,7 @@ GameObject:
   - component: {fileID: 5655573087867918831}
   - component: {fileID: 2607481261093716073}
   - component: {fileID: 7487005948218795820}
+  - component: {fileID: 8291035406395617212}
   m_Layer: 0
   m_Name: Main_Camera
   m_TagString: MainCamera
@@ -464,3 +469,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   _isShowing: 0
+--- !u!114 &8291035406395617212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6452881379417458719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd13935d63c3d9c43a95d49f54339742, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpellCaller.CameraShake

@@ -6,7 +6,7 @@ namespace SpellCaller
     /// <summary>
     /// Controla a rotação da câmera filha do player
     /// </summary>
-    public class RotateCamera : MonoBehaviour
+    public class CameraRotation : MonoBehaviour
     {
         [Header("Parâmetros")]
         [SerializeField] private float _sensitivity;
