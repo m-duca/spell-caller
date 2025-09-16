@@ -25,6 +25,7 @@ namespace SpellCaller
 
         [Header("Referências")]
         [SerializeField] private CharacterController _characterController;
+        [SerializeField] private Animator _animator;
         [SerializeField] private InputActionReference _moveAction;
         [SerializeField] private InputActionReference _jumpAction;
         [SerializeField] private CameraShake _cameraShake;
@@ -45,6 +46,7 @@ namespace SpellCaller
             ApplyMovement();
             ApplyGravity();
             HandleHeadBob();
+            WalkAnimation();
         }
 
         #region Inputs
@@ -112,6 +114,11 @@ namespace SpellCaller
                 _cameraShake.StartHeadBob(_headBobIntensity, _headBobSpeed);
             else
                 _cameraShake.StopHeadBob(_headBobStopDuration);
+        }
+
+        private void WalkAnimation()
+        {
+            _animator.speed = IsMoving() ? 1f : 0f;
         }
 
         #endregion
