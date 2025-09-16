@@ -18,10 +18,16 @@ namespace SpellCaller
         [SerializeField] private float _groundGravity;
         [SerializeField] private float _gravityForce;
 
+        [Header("Parâmetros HeadBob")]
+        [SerializeField] private float _headBobIntensity;
+        [SerializeField] private float _headBobSpeed;
+        [SerializeField] private float _headBobStopDuration;
+
         [Header("Referências")]
         [SerializeField] private CharacterController _characterController;
         [SerializeField] private InputActionReference _moveAction;
         [SerializeField] private InputActionReference _jumpAction;
+        [SerializeField] private CameraShake _cameraShake;
 
         // Não serializadas
         private Vector2 _moveInput = Vector2.zero;
@@ -38,6 +44,7 @@ namespace SpellCaller
         {
             ApplyMovement();
             ApplyGravity();
+            HandleHeadBob();
         }
 
         #region Inputs
@@ -97,6 +104,14 @@ namespace SpellCaller
         public bool IsMoving()
         {
             return _curSpeed.magnitude > 0.01f;
+        }
+
+        private void HandleHeadBob()
+        {
+            if (IsMoving())
+                _cameraShake.StartHeadBob(_headBobIntensity, _headBobSpeed);
+            else
+                _cameraShake.StopHeadBob(_headBobStopDuration);
         }
 
         #endregion
