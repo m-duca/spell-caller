@@ -471,6 +471,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1782186229569586851, guid: 729117eafe827854bb5eca3064015605, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2607481261093716073, guid: 729117eafe827854bb5eca3064015605, type: 3}
+      propertyPath: _sensitivity
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2607481261093716073, guid: 729117eafe827854bb5eca3064015605, type: 3}
+      propertyPath: _acceleration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2607481261093716073, guid: 729117eafe827854bb5eca3064015605, type: 3}
+      propertyPath: _deceleration
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6155800142942686647, guid: 729117eafe827854bb5eca3064015605, type: 3}
       propertyPath: m_Enabled
       value: 1
