@@ -8,11 +8,12 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Dissolve
-  m_Shader: {fileID: -6465566751694194690, guid: 5c1f4ccbf4f7ddc4091175db03718d93, type: 3}
+  m_Shader: {fileID: 4800000, guid: dc9ad51526a07884ab0982f5273e9b5d, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
-  m_InvalidKeywords: []
+  m_InvalidKeywords:
+  - _GLOSSYREFLECTIONS_OFF
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -84,6 +85,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Wings:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -112,6 +117,7 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _Edge_Width: 0.1
+    - _EmissiveAmount: 2
     - _EnvironmentReflections: 1
     - _Float: 0
     - _GlossMapScale: 0
@@ -119,6 +125,7 @@ Material:
     - _GlossyReflections: 0
     - _Glow_Thickness: 0.1
     - _Metallic: 0
+    - _Mode: 0
     - _Noise_Scale: 30
     - _OcclusionStrength: 1
     - _Parallax: 0.005
@@ -132,6 +139,7 @@ Material:
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
+    - _UVSec: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
