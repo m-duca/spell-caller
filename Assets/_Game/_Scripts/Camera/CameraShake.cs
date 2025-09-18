@@ -1,4 +1,3 @@
-using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 
@@ -9,66 +8,46 @@ namespace SpellCaller
     /// </summary>
     public class CameraShake : MonoBehaviour
     {
-        // Não serializadas
-        private Coroutine _forcedShakeCoroutine;
+        private Tween _shakeTween;
         private Tween _headBobTween;
         private Vector3 _initialLocalPos;
 
         private void Start() => _initialLocalPos = transform.localPosition;
 
-        #region  Padrão
+        #region Padrão (Shake temporário)
 
         public void StartShake(float delay, float duration, float intensity)
         {
-            StartCoroutine(Shake_Coroutine(delay, duration, intensity));
-        }
+            _shakeTween?.Kill();
 
-        private IEnumerator Shake_Coroutine(float delay, float duration, float intensity)
-        {
-            yield return new WaitForSeconds(delay);
-
-            float curTime = 0;
-
-            while (curTime < duration)
-            {
-                curTime += Time.deltaTime;
-                transform.eulerAngles = new Vector3(Random.Range(-intensity, intensity), Random.Range(-intensity, intensity), 0f);
-                yield return null;
-            }
-
-            transform.eulerAngles = Vector3.zero;
+            _shakeTween = transform
+                .DOShakePosition(duration, intensity, vibrato: 20, randomness: 90, snapping: false, fadeOut: true)
+                .SetDelay(delay)
+                .OnComplete(() => transform.localPosition = _initialLocalPos);
         }
 
         #endregion
 
-        #region  Contínuo
+        #region Contínuo (Shake infinito)
 
-        public void StartContinuosShake(float intensity)
+        public void StartContinuousShake(float intensity, float speed = 0.1f)
         {
-            if (_forcedShakeCoroutine == null)
-                _forcedShakeCoroutine = StartCoroutine(ContinuosShake_Coroutine(intensity));
-            else
-                Debug.LogError("Impossível começar um novo shake! Já está ocorrendo algum.");
+            if (_shakeTween != null && _shakeTween.IsActive()) return;
+
+            _shakeTween = transform
+                .DOShakePosition(speed, intensity, vibrato: 10, randomness: 90, snapping: false, fadeOut: false)
+                .SetLoops(-1, LoopType.Restart);
         }
 
-        private IEnumerator ContinuosShake_Coroutine(float intensity)
+        public void StopContinuousShake(float resetDuration = 0.2f)
         {
-            while (true)
+            if (_shakeTween != null)
             {
-                transform.eulerAngles = new Vector3(Random.Range(-intensity, intensity), Random.Range(-intensity, intensity), 0f);
-
-                yield return null;
+                _shakeTween.Kill();
+                _shakeTween = null;
             }
-        }
 
-        public void StopContinuosShake()
-        {
-            if (_forcedShakeCoroutine == null) return;
-
-            StopCoroutine(_forcedShakeCoroutine);
-            _forcedShakeCoroutine = null;
-
-            transform.eulerAngles = Vector3.zero;
+            transform.DOLocalMove(_initialLocalPos, resetDuration);
         }
 
         #endregion
@@ -79,7 +58,8 @@ namespace SpellCaller
         {
             if (_headBobTween != null && _headBobTween.IsActive()) return;
 
-            _headBobTween = transform.DOLocalMoveY(_initialLocalPos.y + intensity, 1f / speed)
+            _headBobTween = transform
+                .DOLocalMoveY(_initialLocalPos.y + intensity, 1f / speed)
                 .SetEase(Ease.InOutSine)
                 .SetLoops(-1, LoopType.Yoyo);
         }

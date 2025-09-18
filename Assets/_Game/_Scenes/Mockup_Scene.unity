@@ -881,21 +881,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6022293968925055994, guid: 9eae691c2a52b9d4aa8a12f3562751ff, type: 3}
-      propertyPath: _spellDatas.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6022293968925055994, guid: 9eae691c2a52b9d4aa8a12f3562751ff, type: 3}
-      propertyPath: '_spellDatas.Array.data[1]'
-      value: 
-      objectReference: {fileID: 11400000, guid: acbfbfd317f27ea46b05ed80b6335339, type: 2}
     - target: {fileID: 6948753702746180175, guid: 9eae691c2a52b9d4aa8a12f3562751ff, type: 3}
       propertyPath: m_Name
       value: SpellCaller_Prefab
-      objectReference: {fileID: 0}
-    - target: {fileID: 6948753702746180175, guid: 9eae691c2a52b9d4aa8a12f3562751ff, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

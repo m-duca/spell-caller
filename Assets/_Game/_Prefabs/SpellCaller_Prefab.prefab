@@ -44,5 +44,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f8a455e58f37dd4bb47974e8e05f10d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpellCaller
-  _spellDatas:
-  - {fileID: 11400000, guid: 87855f234e63df64fb212af1eb2ea19b, type: 2}
