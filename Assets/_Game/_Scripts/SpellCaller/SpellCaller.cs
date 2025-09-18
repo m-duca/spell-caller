@@ -44,6 +44,7 @@ namespace SpellCaller
                 }
 
                 _spellDict.Add(data.Name, data.Cast);
+                Debug.Log($"Adicionando spell: {data.Name}");
             }
 
             SetupRecognizer();

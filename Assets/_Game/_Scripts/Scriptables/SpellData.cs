@@ -11,6 +11,7 @@ namespace SpellCaller
         [Header("Parâmetros")]
         [SerializeField] private string _name;
         [SerializeField] private GameObject _effectPrefab;
+        [SerializeField] private float _spawnDistance;
 
         // Propriedades
         public string Name { get { return _name; } }
@@ -18,11 +19,14 @@ namespace SpellCaller
         public void Cast()
         {
             if (PlayerManager.Instance == null) return;
-            
-            if (PlayerManager.Instance.PlayerSpells.GetCurrentSpell().name != Name) return;
 
-            // TODO: Instanciar efeito no transform.forward do Player
+            PlayerSpells playerSpells = PlayerManager.Instance.PlayerSpells;
+
+            if (!playerSpells.CanSpawn || playerSpells.GetCurrentSpell().Name != Name) return;
+
             Debug.Log($"<color=cyan>Lançando feitiço: {_name}</color>");
+
+            playerSpells.SpawnSpell(_effectPrefab, _spawnDistance);
         }
     }
 }

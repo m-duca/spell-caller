@@ -477,11 +477,10 @@ MonoBehaviour:
   _curSpellIndex: 0
   _changeSpellAction: {fileID: 5411095906622087575, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   _changeDelay: 0.5
+  _spawnDelay: 1
   _spellDatas:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 8ced6ff659de1024aa92a3d2a7d7a3bf, type: 2}
+  _cameraTransform: {fileID: 5071903223505842194}
 --- !u!114 &2825634468137588955
 MonoBehaviour:
   m_ObjectHideFlags: 0
