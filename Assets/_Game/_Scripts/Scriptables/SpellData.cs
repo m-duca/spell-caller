@@ -12,6 +12,7 @@ namespace SpellCaller
         [SerializeField] private string _name;
         [SerializeField] private GameObject _effectPrefab;
         [SerializeField] private float _spawnDistance;
+        [SerializeField] private float _spawnLifeTime;
 
         // Propriedades
         public string Name { get { return _name; } }
@@ -26,7 +27,7 @@ namespace SpellCaller
 
             Debug.Log($"<color=cyan>Lançando feitiço: {_name}</color>");
 
-            playerSpells.SpawnSpell(_effectPrefab, _spawnDistance);
+            playerSpells.SpawnSpell(_effectPrefab, _spawnDistance, _spawnLifeTime);
         }
     }
 }

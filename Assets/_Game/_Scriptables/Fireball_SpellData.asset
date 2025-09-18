@@ -15,3 +15,4 @@ MonoBehaviour:
   _name: fireball
   _effectPrefab: {fileID: 710307037009592177, guid: 7ea680e2415605c49a9af7e9455a619c, type: 3}
   _spawnDistance: 2
+  _spawnLifeTime: 5

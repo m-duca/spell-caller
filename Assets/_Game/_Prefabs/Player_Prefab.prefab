@@ -478,6 +478,9 @@ MonoBehaviour:
   _changeSpellAction: {fileID: 5411095906622087575, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   _changeDelay: 0.5
   _spawnDelay: 1
+  _spawnShakeDelay: 0
+  _spawnShakeIntensity: 2
+  _spawnShakeDuration: 0.2
   _spellDatas:
   - {fileID: 11400000, guid: 8ced6ff659de1024aa92a3d2a7d7a3bf, type: 2}
   _cameraTransform: {fileID: 5071903223505842194}
@@ -1638,6 +1641,7 @@ GameObject:
   - component: {fileID: 2607481261093716073}
   - component: {fileID: 7487005948218795820}
   - component: {fileID: 8291035406395617212}
+  - component: {fileID: 8790118486977948142}
   m_Layer: 0
   m_Name: Main_Camera
   m_TagString: MainCamera
@@ -1807,6 +1811,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd13935d63c3d9c43a95d49f54339742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpellCaller.CameraShake
+--- !u!114 &8790118486977948142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6452881379417458719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99cdb0763b5aecf42bef4ca4b56428a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpellCaller.CameraManager
 --- !u!1 &6549230244690350231
 GameObject:
   m_ObjectHideFlags: 0
