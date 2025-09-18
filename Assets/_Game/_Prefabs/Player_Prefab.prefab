@@ -272,6 +272,8 @@ GameObject:
   - component: {fileID: 1348172252982959254}
   - component: {fileID: 6133368763824021180}
   - component: {fileID: 6155800142942686647}
+  - component: {fileID: 9186955265984238306}
+  - component: {fileID: 2825634468137588955}
   m_Layer: 0
   m_Name: Player_Prefab
   m_TagString: Untagged
@@ -460,6 +462,38 @@ MonoBehaviour:
   _moveAction: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   _jumpAction: {fileID: -2099379676528639254, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   _cameraShake: {fileID: 8291035406395617212}
+--- !u!114 &9186955265984238306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996388739226142456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c093d36a2550084a9289774198fe45b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  _curSpellIndex: 0
+  _changeSpellAction: {fileID: 5411095906622087575, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  _changeDelay: 0.5
+  _spellDatas:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &2825634468137588955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996388739226142456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c404624a1de3d84498234f705122c250, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &1175048710206147584
 GameObject:
   m_ObjectHideFlags: 0

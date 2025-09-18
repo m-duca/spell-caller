@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -11,14 +12,16 @@ namespace SpellCaller
     /// </summary>
     public class SpellCaller : MonoBehaviour
     {
-        [Header("Referências")]
-        [SerializeField] private List<SpellData> _spellDatas;
-
         // Não serializadas
         private KeywordRecognizer _recognizer;
         private Dictionary<string, Action> _spellDict = new();
 
-        private void Awake() => SetupSpells();
+        private IEnumerator Start()
+        {
+            yield return new WaitForEndOfFrame();
+
+            SetupSpells();
+        }
 
         private void OnApplicationQuit()
         {
@@ -30,7 +33,9 @@ namespace SpellCaller
 
         private void SetupSpells()
         {
-            foreach (SpellData data in _spellDatas)
+            List<SpellData> _spells = PlayerManager.Instance.PlayerSpells.SpellDatas;
+
+            foreach (SpellData data in _spells)
             {
                 if (_spellDict.ContainsKey(data.Name))
                 {

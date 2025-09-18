@@ -17,6 +17,10 @@ namespace SpellCaller
 
         public void Cast()
         {
+            if (PlayerManager.Instance == null) return;
+            
+            if (PlayerManager.Instance.PlayerSpells.GetCurrentSpell().name != Name) return;
+
             // TODO: Instanciar efeito no transform.forward do Player
             Debug.Log($"<color=cyan>Lançando feitiço: {_name}</color>");
         }
