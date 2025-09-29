@@ -474,6 +474,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c093d36a2550084a9289774198fe45b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  _canForce: 1
+  _forceCastAction: {fileID: -2865590704904594433, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   _curSpellIndex: 0
   _changeSpellAction: {fileID: 5411095906622087575, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   _changeDelay: 0.5
