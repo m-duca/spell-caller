@@ -10,6 +10,10 @@ namespace SpellCaller
     /// </summary>
     public class PlayerSpells : MonoBehaviour
     {
+        [Header("Debug")]
+        [SerializeField] private bool _canForce;
+        [SerializeField] private InputActionReference _forceCastAction;
+
         [Header("Troca")]
         [SerializeField] private int _curSpellIndex = 0;
         [SerializeField] private InputActionReference _changeSpellAction;
@@ -33,9 +37,17 @@ namespace SpellCaller
         private bool _isOnChangeDelay = false;
         private bool _canSpawn = true;
 
-        private void OnEnable() => _changeSpellAction.action.performed += GetChangeInput;
+        private void OnEnable()
+        {
+            _changeSpellAction.action.performed += GetChangeInput;
+            _forceCastAction.action.performed += ForceCastInput;
+        }
 
-        private void OnDisable() => _changeSpellAction.action.performed -= GetChangeInput;
+        private void OnDisable()
+        {
+            _changeSpellAction.action.performed -= GetChangeInput;
+            _forceCastAction.action.performed -= ForceCastInput;
+        }
 
         public SpellData GetCurrentSpell()
         {
@@ -86,7 +98,22 @@ namespace SpellCaller
             yield return new WaitForSeconds(_spawnDelay);
             _canSpawn = true;
         }
-        
+
+        #endregion
+
+        #region  Debug
+
+        private void ForceCastInput(InputAction.CallbackContext contextValue)
+        {
+            if (!_canForce)
+            {
+                Debug.LogError("Force Cast desabilitado!");
+                return;
+            }
+
+            GetCurrentSpell().Cast();
+        }
+
         #endregion
     }
 }
