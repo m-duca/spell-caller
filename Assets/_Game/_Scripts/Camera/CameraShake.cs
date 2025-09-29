@@ -8,9 +8,11 @@ namespace SpellCaller
     /// </summary>
     public class CameraShake : MonoBehaviour
     {
+        // Não serializadas
         private Tween _shakeTween;
         private Tween _headBobTween;
         private Vector3 _initialLocalPos;
+        private bool _stoppedHeadBob = false;
 
         private void Start() => _initialLocalPos = transform.localPosition;
 
@@ -62,10 +64,14 @@ namespace SpellCaller
                 .DOLocalMoveY(_initialLocalPos.y + intensity, 1f / speed)
                 .SetEase(Ease.InOutSine)
                 .SetLoops(-1, LoopType.Yoyo);
+
+            _stoppedHeadBob = false;
         }
 
         public void StopHeadBob(float duration)
         {
+            if (_stoppedHeadBob) return;
+
             if (_headBobTween != null)
             {
                 _headBobTween.Kill();
@@ -73,6 +79,8 @@ namespace SpellCaller
             }
 
             transform.DOLocalMove(_initialLocalPos, duration);
+
+            _stoppedHeadBob = true;
         }
 
         #endregion
