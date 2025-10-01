@@ -39,5 +39,7 @@ namespace SpellCaller
                      .SetEase(Ease.Linear)
                      .SetLoops(-1, LoopType.Restart);
         }
+
+        private void OnDisable() => transform.DOKill();
     }
 }
