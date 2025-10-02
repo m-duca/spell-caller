@@ -5,7 +5,7 @@ namespace SpellCaller
     /// <summary>
     /// Lida com o comportamento de ataque da bola de fogo (impacto e queimadura)
     /// </summary>
-    public class FireballAttack : MonoBehaviour
+    public class FireBallAttack : MonoBehaviour
     {
         [Header("Pârametros")]
         [SerializeField] private int _impactDamage;
@@ -45,7 +45,7 @@ namespace SpellCaller
 
         private void SpawnFlames()
         {
-            GetComponent<FireballMovement>().enabled = false;
+            GetComponent<FireBallMovement>().enabled = false;
             GetComponent<Rigidbody>().isKinematic = true;
             _vfxParent.SetActive(false);
 

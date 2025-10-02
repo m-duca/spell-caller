@@ -6,8 +6,7 @@ namespace SpellCaller
     /// <summary>
     /// Executa o movimento de lançamento da bola de fogo
     /// </summary>
-    [RequireComponent(typeof(Rigidbody))]
-    public class FireballMovement : MonoBehaviour
+    public class FireBallMovement : MonoBehaviour
     {
         [Header("Parâmetros Movimento")]
         [SerializeField] private float _forwardForce;
