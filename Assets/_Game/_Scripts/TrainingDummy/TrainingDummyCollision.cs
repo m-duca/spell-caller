@@ -8,7 +8,7 @@ namespace SpellCaller
     {
         [Header("Parâmetros")]
         [SerializeField] private int _startLife;
-        private int _currentLife;
+        [SerializeField] private int _currentLife;
 
         [Header("Feedback de Dano")]
         [SerializeField] private float _rotationDuration;
@@ -35,6 +35,8 @@ namespace SpellCaller
             if (_renderer != null)
                 _originalColor = _renderer.material.color;
         }
+
+        private void OnValidate() => _currentLife = _startLife;
 
         public void ApplyDamage(int damageValue, Vector3 positionValue)
         {
@@ -65,13 +67,11 @@ namespace SpellCaller
 
         public void ApplyContinuosDamage(int damageValue, float intervalValue, Vector3 positionValue)
         {
-            /*
             if (!_canApplyContinuosDamage || _isDead) return;
 
             _canApplyContinuosDamage = false;
             ApplyDamage(damageValue, positionValue);
             StartCoroutine(ResetCanApplyContinuosDamage_Coroutine(intervalValue));
-            */
         }
 
         private IEnumerator ResetCanApplyContinuosDamage_Coroutine(float intervalValue)
@@ -87,8 +87,10 @@ namespace SpellCaller
             if (_isDead) return;
             _isDead = true;
 
+            GetComponent<CapsuleCollider>().enabled = false;
+            this.enabled = false;
+            transform.DOKill(true);
             _animator.SetTrigger(ANIM_PARAM_ISDYING);
-            Destroy(gameObject, 3f);
         }
     }
 }
