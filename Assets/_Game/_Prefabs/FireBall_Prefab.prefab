@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: -5950881477623671122}
   - component: {fileID: -3138348309133702375}
   - component: {fileID: 3203701150170448898}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FireBall_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ Rigidbody:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
@@ -201,11 +201,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5adb343a10b34004b87249771b3f0a0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpellCaller.FireballAttack
-  _impactDamage: 0
-  _burnDamage: 0
-  _burnInterval: 0.8
-  _flamesColRadius: 0
-  _flamesSpawnOffset: {x: 0, y: -0.5, z: 0}
+  _impactDamage: 3
+  _burnDamage: 1
+  _burnInterval: 1.5
+  _flamesColRadius: 1.5
+  _flameRayOriginDistance: 5
+  _flamesSpawnOffset: {x: 0, y: -2.3, z: 0}
   _vfxParent: {fileID: 8120800171168092277}
   _flamesVfxPrefab: {fileID: 1972207730512856, guid: ea4fb55d0227e604386f44f905cfe7c0, type: 3}
 --- !u!1 &2170979645701503183

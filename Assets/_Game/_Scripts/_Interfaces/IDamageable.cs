@@ -8,8 +8,11 @@ namespace SpellCaller
     public interface IDamageable
     {
         void ApplyDamage(int damageValue, Vector3 positionValue);
+
         void ApplyContinuosDamage(int damageValue, float intervalValue, Vector3 positionValue);
-        void ForceDeath();
-        void CheckDeath();
+
+        void ForceDie();
+
+        void Die();
     }
 }
