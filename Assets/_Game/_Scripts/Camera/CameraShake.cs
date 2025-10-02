@@ -18,13 +18,13 @@ namespace SpellCaller
 
         #region Padrão (Shake temporário)
 
-        public void StartShake(float delay, float duration, float intensity)
+        public void StartShake(float delayValue, float durationValue, float intensityValue)
         {
             _shakeTween?.Kill();
 
             _shakeTween = transform
-                .DOShakePosition(duration, intensity, vibrato: 20, randomness: 90, snapping: false, fadeOut: true)
-                .SetDelay(delay)
+                .DOShakePosition(durationValue, intensityValue, vibrato: 20, randomness: 90, snapping: false, fadeOut: true)
+                .SetDelay(delayValue)
                 .OnComplete(() => transform.localPosition = _initialLocalPos);
         }
 
@@ -32,16 +32,16 @@ namespace SpellCaller
 
         #region Contínuo (Shake infinito)
 
-        public void StartContinuousShake(float intensity, float speed = 0.1f)
+        public void StartContinuousShake(float intensityValue, float speedValue)
         {
             if (_shakeTween != null && _shakeTween.IsActive()) return;
 
             _shakeTween = transform
-                .DOShakePosition(speed, intensity, vibrato: 10, randomness: 90, snapping: false, fadeOut: false)
+                .DOShakePosition(speedValue, intensityValue, vibrato: 10, randomness: 90, snapping: false, fadeOut: false)
                 .SetLoops(-1, LoopType.Restart);
         }
 
-        public void StopContinuousShake(float resetDuration = 0.2f)
+        public void StopContinuousShake(float resetDurationValue)
         {
             if (_shakeTween != null)
             {
@@ -49,26 +49,26 @@ namespace SpellCaller
                 _shakeTween = null;
             }
 
-            transform.DOLocalMove(_initialLocalPos, resetDuration);
+            transform.DOLocalMove(_initialLocalPos, resetDurationValue);
         }
 
         #endregion
 
         #region HeadBob
 
-        public void StartHeadBob(float intensity, float speed)
+        public void StartHeadBob(float intensityValue, float speedValue)
         {
             if (_headBobTween != null && _headBobTween.IsActive()) return;
 
             _headBobTween = transform
-                .DOLocalMoveY(_initialLocalPos.y + intensity, 1f / speed)
+                .DOLocalMoveY(_initialLocalPos.y + intensityValue, 1f / speedValue)
                 .SetEase(Ease.InOutSine)
                 .SetLoops(-1, LoopType.Yoyo);
 
             _stoppedHeadBob = false;
         }
 
-        public void StopHeadBob(float duration)
+        public void StopHeadBob(float durationValue)
         {
             if (_stoppedHeadBob) return;
 
@@ -78,7 +78,7 @@ namespace SpellCaller
                 _headBobTween = null;
             }
 
-            transform.DOLocalMove(_initialLocalPos, duration);
+            transform.DOLocalMove(_initialLocalPos, durationValue);
 
             _stoppedHeadBob = true;
         }

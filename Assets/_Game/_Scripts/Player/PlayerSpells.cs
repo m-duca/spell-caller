@@ -19,12 +19,6 @@ namespace SpellCaller
         [SerializeField] private InputActionReference _changeSpellAction;
         [SerializeField] private float _changeDelay;
 
-        [Header("Conjurar")]
-        [SerializeField] private float _spawnDelay;
-        [SerializeField] private float _spawnShakeDelay;
-        [SerializeField] private float _spawnShakeIntensity;
-        [SerializeField] private float _spawnShakeDuration;
-
         [Header("Referências")]
         [SerializeField] private List<SpellData> _spellDatas;
         [SerializeField] private Transform _cameraTransform;
@@ -81,21 +75,21 @@ namespace SpellCaller
 
         #region Spawn
 
-        public void SpawnSpell(GameObject prefabValue, float distanceValue, float lifeTimeValue)
+        public void SpawnSpell(SpellData dataValue, GameObject prefabValue, float distanceValue, float lifeTimeValue)
         {
             Vector3 spawnPos = _cameraTransform.position + _cameraTransform.forward * distanceValue;
 
             Destroy(Instantiate(prefabValue, spawnPos, _cameraTransform.rotation), lifeTimeValue);
 
             _canSpawn = false;
-            StartCoroutine(ResetCanSpawn_Coroutine());
+            StartCoroutine(ResetCanSpawn_Coroutine(dataValue.SpawnCooldown));
 
-            CameraManager.Instance?.CameraShake.StartShake(_spawnShakeDelay, _spawnShakeIntensity, _spawnShakeDuration);
+            CameraManager.Instance?.CameraShake.StartShake(dataValue.ShakeDelay, dataValue.ShakeIntensity, dataValue.ShakeDuration);
         }
 
-        private IEnumerator ResetCanSpawn_Coroutine()
+        private IEnumerator ResetCanSpawn_Coroutine(float cooldownValue)
         {
-            yield return new WaitForSeconds(_spawnDelay);
+            yield return new WaitForSeconds(cooldownValue);
             _canSpawn = true;
         }
 

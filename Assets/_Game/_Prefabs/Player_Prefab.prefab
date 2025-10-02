@@ -486,6 +486,7 @@ MonoBehaviour:
   _spawnShakeDuration: 0.85
   _spellDatas:
   - {fileID: 11400000, guid: 8ced6ff659de1024aa92a3d2a7d7a3bf, type: 2}
+  - {fileID: 11400000, guid: 8ba3d8d8e4972244eb815ef0b4515c02, type: 2}
   _cameraTransform: {fileID: 5071903223505842194}
 --- !u!114 &2825634468137588955
 MonoBehaviour:

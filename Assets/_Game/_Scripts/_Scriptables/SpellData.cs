@@ -10,12 +10,24 @@ namespace SpellCaller
     {
         [Header("Parâmetros")]
         [SerializeField] private string _name;
+
+        [Header("Spawn")]
         [SerializeField] private GameObject _effectPrefab;
+        [SerializeField] private float _spawnCooldown;
         [SerializeField] private float _spawnDistance;
         [SerializeField] private float _spawnLifeTime;
 
+        [Header("Camera Shake")]
+        [SerializeField] private float _shakeDelay;
+        [SerializeField] private float _shakeIntensity;
+        [SerializeField] private float _shakeDuration;
+
         // Propriedades
         public string Name { get { return _name; } }
+        public float SpawnCooldown { get { return _spawnCooldown; } }
+        public float ShakeDelay { get { return _shakeDelay; } }
+        public float ShakeIntensity { get { return _shakeIntensity; } }
+        public float ShakeDuration { get { return _shakeDuration; } }
 
         public void Cast()
         {
@@ -27,7 +39,7 @@ namespace SpellCaller
 
             Debug.Log($"<color=cyan>Lançando feitiço: {_name}</color>");
 
-            playerSpells.SpawnSpell(_effectPrefab, _spawnDistance, _spawnLifeTime);
+            playerSpells.SpawnSpell(this, _effectPrefab, _spawnDistance, _spawnLifeTime);
         }
     }
 }
