@@ -12,9 +12,9 @@ namespace SpellCaller
         [SerializeField] private int _burnDamage;
         [SerializeField] private float _burnInterval;
 
-        [Header("Chamas")]
+        [Header("Efeito de Chamas")]
         [SerializeField] private float _flamesColRadius;
-        [SerializeField] private float _flameRayOriginDistance;
+        [SerializeField] private float _flamesRayOriginDistance;
         [SerializeField] private Vector3 _flamesSpawnOffset;
 
         [Header("Referências")]
@@ -29,7 +29,7 @@ namespace SpellCaller
             if (_spawnedFlames != null) return;
 
             ApplyImpactDamage(triggerValue.gameObject, triggerValue.ClosestPoint(transform.position));
-            SpawnFlames();
+            SpawnFlames(triggerValue);
         }
 
         private void OnTriggerStay(Collider triggerValue) => ApplyBurnDamage(triggerValue.gameObject, triggerValue.ClosestPoint(transform.position));
@@ -43,24 +43,21 @@ namespace SpellCaller
 
         private void ApplyBurnDamage(GameObject targetValue, Vector3 colPositionValue) => targetValue.GetComponent<IDamageable>()?.ApplyContinuosDamage(_burnDamage, _burnInterval, colPositionValue);
 
-        private void SpawnFlames()
+        private void SpawnFlames(Collider colValue)
         {
             GetComponent<FireBallMovement>().enabled = false;
             GetComponent<Rigidbody>().isKinematic = true;
             _vfxParent.SetActive(false);
 
-            Vector3 rayOrigin = transform.position + Vector3.up;
-            RaycastHit hit;
+            Bounds targetBounds = colValue.bounds;
+            Vector3 spawnPosition = new Vector3(targetBounds.center.x, targetBounds.min.y, targetBounds.center.z) + _flamesSpawnOffset;
 
-            if (Physics.Raycast(rayOrigin, Vector3.down, out hit, _flameRayOriginDistance))
-            {
-                Vector3 spawnPosition = hit.point + _flamesSpawnOffset;
-                _spawnedFlames = Instantiate(_flamesVfxPrefab, spawnPosition, Quaternion.identity);
-            }
-            else
-            {
-                _spawnedFlames = Instantiate(_flamesVfxPrefab, transform.position + _flamesSpawnOffset, Quaternion.identity);
-            }
+            Vector3 rayOrigin = spawnPosition + Vector3.up * _flamesRayOriginDistance;
+
+            if (Physics.Raycast(rayOrigin, Vector3.down, out RaycastHit hit, _flamesRayOriginDistance * 2f))
+                spawnPosition = hit.point + _flamesSpawnOffset;
+
+            GameObject snow = Instantiate(_flamesVfxPrefab, spawnPosition, Quaternion.identity);
 
             GetComponent<SphereCollider>().radius = _flamesColRadius;
         }

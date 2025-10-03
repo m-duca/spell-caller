@@ -4864,6 +4864,7 @@ GameObject:
   - component: {fileID: 1175393221697825334}
   - component: {fileID: 3855664713339982101}
   - component: {fileID: 87373362734331626}
+  - component: {fileID: 5605366908735311967}
   m_Layer: 0
   m_Name: IceShard_Prefab
   m_TagString: Untagged
@@ -4951,7 +4952,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpellCaller.IceShardMovement
   _moveSpeed: 65
-  _meshTransform: {fileID: 1371334975208071250}
+--- !u!114 &5605366908735311967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683182934616091483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 549ee421414f3a44686a402491025317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpellCaller.IceShardAttack
+  _impactDamage: 2
+  _snowRayOriginDistance: 5
+  _snowSpawnOffset: {x: 0, y: -2.3, z: 0}
+  _snowVfxPrefab: {fileID: 161766660727748596, guid: a5073e9f25e337f4890cf4625ead89ef, type: 3}
 --- !u!1 &1629375398072983076
 GameObject:
   m_ObjectHideFlags: 0

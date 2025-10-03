@@ -205,7 +205,7 @@ MonoBehaviour:
   _burnDamage: 1
   _burnInterval: 1.5
   _flamesColRadius: 1.5
-  _flameRayOriginDistance: 5
+  _flamesRayOriginDistance: 5
   _flamesSpawnOffset: {x: 0, y: -2.3, z: 0}
   _vfxParent: {fileID: 8120800171168092277}
   _flamesVfxPrefab: {fileID: 1972207730512856, guid: ea4fb55d0227e604386f44f905cfe7c0, type: 3}
