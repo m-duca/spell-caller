@@ -25,9 +25,24 @@ namespace SpellCaller
 
         private void OnApplicationQuit()
         {
+            if (_recognizer == null) return;
+
             if (_recognizer.IsRunning)
                 _recognizer.Stop();
         }
+
+        private void OnDestroy()
+        {
+            if (_recognizer == null) return;
+
+            if (_recognizer.IsRunning)
+                _recognizer.Stop();
+
+            _recognizer.OnPhraseRecognized -= CheckSpell;
+            _recognizer.Dispose();
+            _recognizer = null;
+        }
+
 
         private void CheckSpell(PhraseRecognizedEventArgs speechValue) => _spellDict[speechValue.text].Invoke();
 
