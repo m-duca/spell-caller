@@ -8,9 +8,11 @@ namespace SpellCaller
 
         // Propriedades
         public CameraShake CameraShake { get { return _cameraShake; } }
+        public CameraRotation CameraRotation {get { return _cameraRotation; } }
 
         // Não serializadas
         private CameraShake _cameraShake;
+        private CameraRotation _cameraRotation;
 
         private void Awake()
         {
@@ -21,6 +23,7 @@ namespace SpellCaller
             DontDestroyOnLoad(gameObject);
 
             _cameraShake = GetComponent<CameraShake>();
+            _cameraRotation = GetComponent<CameraRotation>();
         }
     }
 }

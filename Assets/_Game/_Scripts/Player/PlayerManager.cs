@@ -28,5 +28,7 @@ namespace SpellCaller
             _playerMovement = GetComponent<PlayerMovement>();
             _playerSpells = GetComponent<PlayerSpells>();
         }
+
+        public void SetPosition(Vector3 newPosValue) => gameObject.transform.position = newPosValue;
     }
 }

@@ -269,6 +269,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1575118480062824707}
   - component: {fileID: 1846277899999866874}
+  - component: {fileID: 1387486346386079655}
+  - component: {fileID: 6374809090020923891}
   - component: {fileID: 1348172252982959254}
   - component: {fileID: 6133368763824021180}
   - component: {fileID: 6155800142942686647}
@@ -306,6 +308,56 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 996388739226142456}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &1387486346386079655
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996388739226142456}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 1
+  m_Constraints: 112
+  m_CollisionDetection: 1
+--- !u!136 &6374809090020923891
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996388739226142456}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1.9918894
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.0005200505, z: 0}
 --- !u!143 &1348172252982959254
 CharacterController:
   m_ObjectHideFlags: 0
@@ -432,6 +484,14 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8c8e29b3-63d1-412c-bec5-69a81d1e885d
+    m_ActionName: 'Player/ChangeSpell[/Mouse/scroll]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a030f797-f4d1-4175-9a25-8a08717238d1
+    m_ActionName: 'Player/ForceCast[/Keyboard/f]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
@@ -477,13 +537,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   _canForce: 1
   _forceCastAction: {fileID: -2865590704904594433, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  _curSpellIndex: 0
+  _curSpellIndex: 3
   _changeSpellAction: {fileID: 5411095906622087575, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   _changeDelay: 0.5
   _spellDatas:
   - {fileID: 11400000, guid: 8ced6ff659de1024aa92a3d2a7d7a3bf, type: 2}
   - {fileID: 11400000, guid: 8ba3d8d8e4972244eb815ef0b4515c02, type: 2}
   - {fileID: 11400000, guid: 62059eacc254d9b4aaefd34e954350d8, type: 2}
+  - {fileID: 11400000, guid: 2c194c8e9c2acb641a5a0540342365bb, type: 2}
   _cameraTransform: {fileID: 5071903223505842194}
 --- !u!114 &2825634468137588955
 MonoBehaviour:
@@ -1651,10 +1712,10 @@ GameObject:
   - component: {fileID: 2625398078943990982}
   - component: {fileID: 5721445167857199119}
   - component: {fileID: 5655573087867918831}
+  - component: {fileID: 8790118486977948142}
   - component: {fileID: 2607481261093716073}
   - component: {fileID: 7487005948218795820}
   - component: {fileID: 8291035406395617212}
-  - component: {fileID: 8790118486977948142}
   m_Layer: 0
   m_Name: Main_Camera
   m_TagString: MainCamera
@@ -1782,6 +1843,18 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &8790118486977948142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6452881379417458719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99cdb0763b5aecf42bef4ca4b56428a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpellCaller.CameraManager
 --- !u!114 &2607481261093716073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1797,6 +1870,7 @@ MonoBehaviour:
   _sensitivity: 0.1
   _minPitch: -90
   _maxPitch: 90
+  _forceLookSpeed: 15
   _playerTransf: {fileID: 1575118480062824707}
   _lookAction: {fileID: -5630151704836100654, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!114 &7487005948218795820
@@ -1824,18 +1898,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd13935d63c3d9c43a95d49f54339742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpellCaller.CameraShake
---- !u!114 &8790118486977948142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6452881379417458719}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99cdb0763b5aecf42bef4ca4b56428a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpellCaller.CameraManager
 --- !u!1 &6549230244690350231
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,7 +24,7 @@ namespace SpellCaller
 
         private void OnCollisionExit(Collision colValue) => colValue.gameObject.GetComponent<ICollideable>()?.CallCollisionExit();
 
-        private void CollisionStay(Collision colValue) => colValue.gameObject.GetComponent<ICollideable>()?.CallCollisionStay();
+        private void OnCollisionStay(Collision colValue) => colValue.gameObject.GetComponent<ICollideable>()?.CallCollisionStay();
 
         #endregion
     }
