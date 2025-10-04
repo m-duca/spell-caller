@@ -57,7 +57,8 @@ namespace SpellCaller
             if (Physics.Raycast(rayOrigin, Vector3.down, out RaycastHit hit, _flamesRayOriginDistance * 2f))
                 spawnPosition = hit.point + _flamesSpawnOffset;
 
-            GameObject snow = Instantiate(_flamesVfxPrefab, spawnPosition, Quaternion.identity);
+            Instantiate(_flamesVfxPrefab, spawnPosition, _flamesVfxPrefab.transform.rotation);
+            Destroy(_flamesVfxPrefab, _flamesVfxPrefab.GetComponent<ParticleSystem>().main.duration);
 
             GetComponent<SphereCollider>().radius = _flamesColRadius;
         }
