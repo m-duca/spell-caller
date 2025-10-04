@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d570ac5991f39d419266735664b4cbe, type: 3}
   m_Name: ThunderBolt_SpellData
   m_EditorClassIdentifier: Assembly-CSharp::SpellData
-  _name: raio
+  _name: "trov\xE3o"
   _effectPrefab: {fileID: 1529154658860425506, guid: 5fca8ce2d135b664499e0a1e6d7a7002, type: 3}
   _spawnCooldown: 1
   _spawnDistance: 2
