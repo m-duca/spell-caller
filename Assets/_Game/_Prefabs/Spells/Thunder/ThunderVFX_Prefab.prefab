@@ -4992,7 +4992,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 2.555e-41, y: -4.0866975e-38, z: 6.33e-43, w: 8.3e-44}
+  m_BoundingSphereOverride: {x: 0.0009248175, y: 1.1705309e-19, z: 2.7088179e+23, w: 1.775259e+28}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
@@ -34441,7 +34441,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8964859838461161948}
   m_Layer: 0
-  m_Name: Thunder_Prefab
+  m_Name: ThunderVFX_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

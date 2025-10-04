@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 198714429152696258}
   - component: {fileID: 199604171885040012}
   m_Layer: 0
-  m_Name: TinyFlames
+  m_Name: FlamesVFX_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

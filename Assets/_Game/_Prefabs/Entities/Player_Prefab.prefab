@@ -480,13 +480,10 @@ MonoBehaviour:
   _curSpellIndex: 0
   _changeSpellAction: {fileID: 5411095906622087575, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   _changeDelay: 0.5
-  _spawnDelay: 1
-  _spawnShakeDelay: 0
-  _spawnShakeIntensity: 1.2
-  _spawnShakeDuration: 0.85
   _spellDatas:
   - {fileID: 11400000, guid: 8ced6ff659de1024aa92a3d2a7d7a3bf, type: 2}
   - {fileID: 11400000, guid: 8ba3d8d8e4972244eb815ef0b4515c02, type: 2}
+  - {fileID: 11400000, guid: 62059eacc254d9b4aaefd34e954350d8, type: 2}
   _cameraTransform: {fileID: 5071903223505842194}
 --- !u!114 &2825634468137588955
 MonoBehaviour:

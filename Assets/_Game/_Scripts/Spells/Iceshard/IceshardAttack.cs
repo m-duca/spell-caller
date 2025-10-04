@@ -11,20 +11,22 @@ namespace SpellCaller
         [SerializeField] private int _impactDamage;
 
         [Header("Efeito de Neve")]
-        [SerializeField] private float _snowRayOriginDistance = 5f;
-        [SerializeField] private Vector3 _snowSpawnOffset = Vector3.zero;
+        [SerializeField] private float _snowRayOriginDistance;
+        [SerializeField] private Vector3 _snowSpawnOffset;
 
         [Header("Referências")]
         [SerializeField] private GameObject _snowVfxPrefab;
 
         private void OnTriggerEnter(Collider triggerValue)
         {
-            Vector3 damagePoint = triggerValue.ClosestPoint(transform.position);
-            triggerValue.GetComponent<IDamageable>()?.ApplyDamage(_impactDamage, damagePoint);
-
-            SpawnSnow(triggerValue);
-
+            ApplyImpactDamage(triggerValue);
             Destroy(gameObject);
+        }
+
+        private void ApplyImpactDamage(Collider colValue)
+        {
+            colValue.GetComponent<IDamageable>()?.ApplyDamage(_impactDamage, colValue.ClosestPoint(transform.position));
+            SpawnSnow(colValue);
         }
 
         private void SpawnSnow(Collider colValue)
@@ -37,7 +39,7 @@ namespace SpellCaller
             if (Physics.Raycast(rayOrigin, Vector3.down, out RaycastHit hit, _snowRayOriginDistance * 2f))
                 spawnPosition = hit.point + _snowSpawnOffset;
 
-            GameObject snow = Instantiate(_snowVfxPrefab, spawnPosition, Quaternion.identity);
+            GameObject snow = Instantiate(_snowVfxPrefab, spawnPosition, _snowVfxPrefab.transform.rotation);
             Destroy(snow, snow.GetComponent<ParticleSystem>().main.duration);
         }
     }
