@@ -942,25 +942,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6133368763824021180, guid: 729117eafe827854bb5eca3064015605, type: 3}
-      propertyPath: m_ActionEvents.Array.size
-      value: 21
-      objectReference: {fileID: 0}
-    - target: {fileID: 6133368763824021180, guid: 729117eafe827854bb5eca3064015605, type: 3}
-      propertyPath: m_ActionEvents.Array.data[19].m_ActionId
-      value: 8c8e29b3-63d1-412c-bec5-69a81d1e885d
-      objectReference: {fileID: 0}
-    - target: {fileID: 6133368763824021180, guid: 729117eafe827854bb5eca3064015605, type: 3}
-      propertyPath: m_ActionEvents.Array.data[20].m_ActionId
-      value: a030f797-f4d1-4175-9a25-8a08717238d1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6133368763824021180, guid: 729117eafe827854bb5eca3064015605, type: 3}
-      propertyPath: m_ActionEvents.Array.data[19].m_ActionName
-      value: 'Player/ChangeSpell[/Mouse/scroll]'
-      objectReference: {fileID: 0}
-    - target: {fileID: 6133368763824021180, guid: 729117eafe827854bb5eca3064015605, type: 3}
-      propertyPath: m_ActionEvents.Array.data[20].m_ActionName
-      value: 'Player/ForceCast[/Keyboard/f]'
+    - target: {fileID: 9186955265984238306, guid: 729117eafe827854bb5eca3064015605, type: 3}
+      propertyPath: _curSpellIndex
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
