@@ -16,6 +16,7 @@ namespace SpellCaller
         [SerializeField] private float _spawnCooldown;
         [SerializeField] private float _spawnDistance;
         [SerializeField] private float _spawnLifeTime;
+        [SerializeField] private SpawnPointType _spawnPoint = SpawnPointType.Camera;
 
         [Header("Camera Shake")]
         [SerializeField] private float _shakeDelay;
@@ -28,6 +29,7 @@ namespace SpellCaller
         public float ShakeDelay { get { return _shakeDelay; } }
         public float ShakeIntensity { get { return _shakeIntensity; } }
         public float ShakeDuration { get { return _shakeDuration; } }
+        public SpawnPointType SpawnPoint { get { return _spawnPoint; } }
 
         public void Cast()
         {
