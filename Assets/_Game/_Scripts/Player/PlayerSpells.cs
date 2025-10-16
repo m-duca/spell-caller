@@ -78,8 +78,15 @@ namespace SpellCaller
         public void SpawnSpell(SpellData dataValue, GameObject prefabValue, float distanceValue, float lifeTimeValue)
         {
             Vector3 spawnPos = _cameraTransform.position + _cameraTransform.forward * distanceValue;
+            Quaternion spawnRotation = _cameraTransform.rotation;
 
-            Destroy(Instantiate(prefabValue, spawnPos, _cameraTransform.rotation), lifeTimeValue);
+            if (dataValue.SpawnPoint == SpawnPointType.Player)
+            {
+                spawnPos = transform.position + transform.forward * distanceValue;
+                spawnRotation = transform.rotation;
+            }
+
+            Destroy(Instantiate(prefabValue, spawnPos, spawnRotation), lifeTimeValue);
 
             _canSpawn = false;
             StartCoroutine(ResetCanSpawn_Coroutine(dataValue.SpawnCooldown));
