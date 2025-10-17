@@ -57,8 +57,8 @@ namespace SpellCaller
             if (Physics.Raycast(rayOrigin, Vector3.down, out RaycastHit hit, _flamesRayOriginDistance * 2f))
                 spawnPosition = hit.point + _flamesSpawnOffset;
 
-            Instantiate(_flamesVfxPrefab, spawnPosition, _flamesVfxPrefab.transform.rotation);
-            Destroy(_flamesVfxPrefab, _flamesVfxPrefab.GetComponent<ParticleSystem>().main.duration);
+            GameObject fireball = Instantiate(_flamesVfxPrefab, spawnPosition, _flamesVfxPrefab.transform.rotation);
+            Destroy(fireball, fireball.GetComponent<ParticleSystem>().main.duration);
 
             GetComponent<SphereCollider>().radius = _flamesColRadius;
         }
