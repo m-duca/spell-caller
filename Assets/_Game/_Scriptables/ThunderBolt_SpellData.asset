@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d570ac5991f39d419266735664b4cbe, type: 3}
   m_Name: ThunderBolt_SpellData
   m_EditorClassIdentifier: Assembly-CSharp::SpellData
-  _name: "trov\xE3o"
+  _iconSpr: {fileID: 21300000, guid: 7f28e2b1f3f94cf4c93fefb62d5b2232, type: 3}
+  _name: "Trov\xE3o"
   _effectPrefab: {fileID: 1529154658860425506, guid: 5fca8ce2d135b664499e0a1e6d7a7002, type: 3}
   _spawnCooldown: 1
   _spawnDistance: 2
   _spawnLifeTime: 1
+  _spawnPoint: 0
   _shakeDelay: 0.15
   _shakeIntensity: 1.8
   _shakeDuration: 0.6
