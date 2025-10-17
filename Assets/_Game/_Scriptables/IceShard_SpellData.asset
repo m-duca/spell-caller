@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d570ac5991f39d419266735664b4cbe, type: 3}
   m_Name: IceShard_SpellData
   m_EditorClassIdentifier: Assembly-CSharp::SpellData
-  _iconSpr: {fileID: 0}
+  _iconSpr: {fileID: 21300000, guid: 755b3eafffab2404ab8eba33bb4db06b, type: 3}
   _name: Gelo
   _effectPrefab: {fileID: 683182934616091483, guid: 0d63b6168fe89c74bb4f0344028e1fd7, type: 3}
   _spawnCooldown: 0.6
