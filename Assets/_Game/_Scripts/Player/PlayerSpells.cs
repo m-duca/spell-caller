@@ -62,10 +62,20 @@ namespace SpellCaller
 
             int newIncrement = value > 0 ? 1 : -1;
 
-            _bookAnimationCaller.PlayFlip(newIncrement);
+            SwitchSpell(newIncrement);
+        }
+
+        private void SwitchSpell(int incrementValue)
+        {
+            _bookAnimationCaller.PlayFlip(incrementValue);
             Invoke(nameof(CallChangeBookUI), 1f);
 
-            _curSpellIndex = Mathf.Clamp(_curSpellIndex + newIncrement, 0, _spellDatas.Count - 1);
+            int newIndex = _curSpellIndex + incrementValue;
+
+            if (newIndex > _spellDatas.Count - 1) newIndex = 0;
+            else if (newIndex < 0) newIndex = _spellDatas.Count - 1;
+
+            _curSpellIndex = newIndex;
 
             _isOnChangeDelay = true;
             StartCoroutine(StopChangeDelay_Coroutine());
