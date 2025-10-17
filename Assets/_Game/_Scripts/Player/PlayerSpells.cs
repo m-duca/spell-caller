@@ -23,6 +23,7 @@ namespace SpellCaller
         [SerializeField] private List<SpellData> _spellDatas;
         [SerializeField] private Transform _cameraTransform;
         [SerializeField] private BookAnimationCaller _bookAnimationCaller;
+        [SerializeField] private BookUI _bookUI;
 
         // Propriedades
         public List<SpellData> SpellDatas { get { return _spellDatas; } }
@@ -31,6 +32,8 @@ namespace SpellCaller
         // Não serializadas
         private bool _isOnChangeDelay = false;
         private bool _canSpawn = true;
+
+        private void Start() => CallChangeBookUI();
 
         private void OnEnable()
         {
@@ -60,6 +63,7 @@ namespace SpellCaller
             int newIncrement = value > 0 ? 1 : -1;
 
             _bookAnimationCaller.PlayFlip(newIncrement);
+            Invoke(nameof(CallChangeBookUI), 1f);
 
             _curSpellIndex = Mathf.Clamp(_curSpellIndex + newIncrement, 0, _spellDatas.Count - 1);
 
@@ -119,5 +123,7 @@ namespace SpellCaller
         }
 
         #endregion
+
+        private void CallChangeBookUI() => _bookUI.ChangeContent(_spellDatas[_curSpellIndex]);
     }
 }

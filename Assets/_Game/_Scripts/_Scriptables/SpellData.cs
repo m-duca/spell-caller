@@ -9,6 +9,7 @@ namespace SpellCaller
     public class SpellData : ScriptableObject
     {
         [Header("Parâmetros")]
+        [SerializeField] private Sprite _iconSpr;
         [SerializeField] private string _name;
 
         [Header("Spawn")]
@@ -23,7 +24,10 @@ namespace SpellCaller
         [SerializeField] private float _shakeIntensity;
         [SerializeField] private float _shakeDuration;
 
+        [Header("UI Livro")]
+
         // Propriedades
+        public Sprite IconSprite { get { return _iconSpr; } }
         public string Name { get { return _name; } }
         public float SpawnCooldown { get { return _spawnCooldown; } }
         public float ShakeDelay { get { return _shakeDelay; } }

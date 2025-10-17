@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d570ac5991f39d419266735664b4cbe, type: 3}
   m_Name: Portal_SpellData
   m_EditorClassIdentifier: Assembly-CSharp::SpellData
-  _name: portal
+  _iconSpr: {fileID: 0}
+  _name: Portal
   _effectPrefab: {fileID: 5794613321389242228, guid: d59557e4d070d5f4bbfd914b211f25ef, type: 3}
   _spawnCooldown: 1
   _spawnDistance: 4
