@@ -22,6 +22,7 @@ namespace SpellCaller
         [Header("Referências")]
         [SerializeField] private List<SpellData> _spellDatas;
         [SerializeField] private Transform _cameraTransform;
+        [SerializeField] private BookAnimationCaller _bookAnimationCaller;
 
         // Propriedades
         public List<SpellData> SpellDatas { get { return _spellDatas; } }
@@ -57,6 +58,8 @@ namespace SpellCaller
             if (value == 0 || _isOnChangeDelay) return;
 
             int newIncrement = value > 0 ? 1 : -1;
+
+            _bookAnimationCaller.PlayFlip(newIncrement);
 
             _curSpellIndex = Mathf.Clamp(_curSpellIndex + newIncrement, 0, _spellDatas.Count - 1);
 
