@@ -4027,6 +4027,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 7670210915439392411, guid: 568b1e8dc64d4864b8c0053bdfb77255, type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7670210915439392411, guid: 568b1e8dc64d4864b8c0053bdfb77255, type: 3}
+      propertyPath: m_Center.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7670210915439392411, guid: 568b1e8dc64d4864b8c0053bdfb77255, type: 3}
+      propertyPath: m_Center.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
