@@ -43,9 +43,21 @@ namespace SpellCaller
 
                 Transform portalTransform = portal.gameObject.transform;
 
-                Vector3 newPlayerPos = portalTransform.position + portalTransform.forward * _playerRealocateDistance;
-                PlayerManager.Instance?.SetPosition(newPlayerPos);
-                CameraManager.Instance?.CameraRotation.ForceLookDirection(portalTransform.forward);
+                if (PlayerManager.Instance == null)
+                {
+                    Debug.LogError("Instância do PlayerManager não encontrada!");
+                    return;
+                }
+
+                if (CameraManager.Instance == null)
+                {
+                    Debug.LogError("Instância do CameraManager não encontrada!");
+                    return;
+                }
+
+                Vector3 newPlayerPos = portalTransform.position + PlayerManager.Instance.transform.forward * _playerRealocateDistance;
+                PlayerManager.Instance.SetPosition(newPlayerPos);
+                CameraManager.Instance.CameraRotation.ForceLookDirection(portalTransform.forward);
             }
         }
     }
