@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 
 namespace SpellCaller
-{
+{   
     /// <summary>
     /// Controla o acionamento das animações do livro de magias
     /// </summary>
@@ -26,6 +26,9 @@ namespace SpellCaller
         private const string ANIM_PARAM_FLIP_FORWARDS = "_flipForwards";
         private const string ANIM_PARAM_FLIP_BACKWARDS = "_flipBackwards";
 
+        private bool _isFlipping = false;
+        private Tween _currentHandTween;
+
         private void Start()
         {
             _anim = GetComponent<Animator>();
@@ -34,7 +37,8 @@ namespace SpellCaller
 
         public void PlayFlip(int incrementValue)
         {
-            if (incrementValue == 0) return;
+            if (incrementValue == 0 || _isFlipping) return;
+            _isFlipping = true;
 
             StartCoroutine(HideUIContent_Coroutine());
 
@@ -50,7 +54,8 @@ namespace SpellCaller
         private IEnumerator CallHandAnimation_Coroutine()
         {
             yield return new WaitForSeconds(_startDelay);
-            StartCoroutine(AnimateHand_Coroutine());
+            yield return AnimateHand_Coroutine();
+            _isFlipping = false;
         }
 
         private IEnumerator AnimateHand_Coroutine()
@@ -58,15 +63,17 @@ namespace SpellCaller
             Vector3 originalPos = _playerMesh.localPosition;
             Vector3 loweredPos = originalPos - new Vector3(0, _meshMoveDistance, 0);
 
-            // Move a mão para baixo
-            _playerMesh.DOLocalMove(loweredPos, _meshMoveDuration)
+            _currentHandTween?.Kill();
+
+            _currentHandTween = _playerMesh.DOLocalMove(loweredPos, _meshMoveDuration)
                 .SetEase(_easeType);
 
-            yield return new WaitForSeconds(_meshMoveDuration + 0.05f);
+            yield return _currentHandTween.WaitForCompletion();
 
-            // Volta à posição original
-            _playerMesh.DOLocalMove(originalPos, _meshMoveDuration)
+            _currentHandTween = _playerMesh.DOLocalMove(originalPos, _meshMoveDuration)
                 .SetEase(_easeType);
+
+            yield return _currentHandTween.WaitForCompletion();
 
             _bookUI.SetContentVisualization(true);
         }
