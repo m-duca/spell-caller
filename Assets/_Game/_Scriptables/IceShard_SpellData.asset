@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d570ac5991f39d419266735664b4cbe, type: 3}
+  m_Name: IceShard_SpellData
+  m_EditorClassIdentifier: Assembly-CSharp::SpellData
+  _iconSpr: {fileID: 21300000, guid: 755b3eafffab2404ab8eba33bb4db06b, type: 3}
+  _name: Gelo
+  _effectPrefab: {fileID: 683182934616091483, guid: 0d63b6168fe89c74bb4f0344028e1fd7, type: 3}
+  _spawnCooldown: 0.6
+  _spawnDistance: 2
+  _spawnLifeTime: 20
+  _spawnPoint: 0
+  _shakeDelay: 0
+  _shakeIntensity: 0.4
+  _shakeDuration: 0.2
