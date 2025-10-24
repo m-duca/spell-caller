@@ -1786,12 +1786,12 @@ GameObject:
   m_Component:
   - component: {fileID: 5071903223505842194}
   - component: {fileID: 2625398078943990982}
-  - component: {fileID: 5721445167857199119}
   - component: {fileID: 5655573087867918831}
   - component: {fileID: 8790118486977948142}
   - component: {fileID: 2607481261093716073}
   - component: {fileID: 7487005948218795820}
   - component: {fileID: 8291035406395617212}
+  - component: {fileID: 6551235075821887059}
   m_Layer: 0
   m_Name: Main_Camera
   m_TagString: MainCamera
@@ -1867,14 +1867,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &5721445167857199119
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6452881379417458719}
-  m_Enabled: 1
 --- !u!114 &5655573087867918831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1973,6 +1965,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd13935d63c3d9c43a95d49f54339742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpellCaller.CameraShake
+--- !u!114 &6551235075821887059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6452881379417458719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!1 &6549230244690350231
 GameObject:
   m_ObjectHideFlags: 0

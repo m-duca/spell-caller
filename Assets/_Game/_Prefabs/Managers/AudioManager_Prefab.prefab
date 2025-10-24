@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6195020890884278659
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6183077261131633417}
+  - component: {fileID: 7276544862303187954}
+  m_Layer: 0
+  m_Name: AudioManager_Prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6183077261131633417
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6195020890884278659}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7276544862303187954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6195020890884278659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030b2f5c3b5c7ce4899f1c29e15b9c19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _masterDefaultVolume: 0.5
+  _ambienceDefaultVolume: 0.5
+  _musicDefaultVolume: 0.5
+  _sfxDefaultVolume: 0.5
+  _environmentEvents:
+  - Guid:
+      Data1: -283054205
+      Data2: 1305797321
+      Data3: -966902140
+      Data4: 273990589
+    Path: event:/Ambience/Ambience_ForestNoise
+  _musicEvents:
+  - Guid:
+      Data1: -142932469
+      Data2: 1329006098
+      Data3: 1668840878
+      Data4: 1984075032
+    Path: event:/Music/Music_MysteryPlace
