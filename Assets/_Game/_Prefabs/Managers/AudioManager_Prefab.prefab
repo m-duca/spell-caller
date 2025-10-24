@@ -44,11 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030b2f5c3b5c7ce4899f1c29e15b9c19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _masterDefaultVolume: 0.5
-  _ambienceDefaultVolume: 0.5
-  _musicDefaultVolume: 0.5
-  _sfxDefaultVolume: 0.5
-  _environmentEvents:
+  _masterDefaultVolume: 1
+  _ambienceDefaultVolume: 0.2
+  _musicDefaultVolume: 0.4
+  _sfxDefaultVolume: 1
+  _ambienceEvents:
   - Guid:
       Data1: -283054205
       Data2: 1305797321

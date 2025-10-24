@@ -1791,7 +1791,7 @@ GameObject:
   - component: {fileID: 2607481261093716073}
   - component: {fileID: 7487005948218795820}
   - component: {fileID: 8291035406395617212}
-  - component: {fileID: 6551235075821887059}
+  - component: {fileID: 9045658989756233167}
   m_Layer: 0
   m_Name: Main_Camera
   m_TagString: MainCamera
@@ -1965,7 +1965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd13935d63c3d9c43a95d49f54339742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpellCaller.CameraShake
---- !u!114 &6551235075821887059
+--- !u!114 &9045658989756233167
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1978,7 +1978,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nonRigidbodyVelocity: 0
-  attenuationObject: {fileID: 0}
+  attenuationObject: {fileID: 6452881379417458719}
 --- !u!1 &6549230244690350231
 GameObject:
   m_ObjectHideFlags: 0

@@ -36,7 +36,7 @@ namespace SpellCaller
         */
 
         [Header("FMOD Events")]
-        [SerializeField] private EventReference[] _environmentEvents;
+        [SerializeField] private EventReference[] _ambienceEvents;
         [SerializeField] private EventReference[] _musicEvents;
         //[SerializeField] private EventReference[] _cutsceneEvents;
 
@@ -252,7 +252,7 @@ namespace SpellCaller
 
         public void PlayAmbience(AmbienceTrackType trackValue)
         {
-            EventReference ambience = _environmentEvents[(int)trackValue];
+            EventReference ambience = _ambienceEvents[(int)trackValue];
 
             if (ambience.IsNull)
             {
@@ -363,7 +363,15 @@ namespace SpellCaller
             StopTrack(ref instanceValue);
 
             instanceValue = CreateEventInstance(referenceValue);
+
+            Camera mainCam = Camera.main;
+            if (mainCam != null)
+                RuntimeManager.AttachInstanceToGameObject(instanceValue, mainCam.transform);
+            else
+                Debug.LogError("Main Camera não encontrada. Tocando música sem Attach.");
+
             instanceValue.start();
+            instanceValue.release();
         }
 
         #endregion
