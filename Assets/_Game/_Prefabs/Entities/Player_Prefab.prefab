@@ -531,7 +531,7 @@ MonoBehaviour:
       Data3: -803970410
       Data4: 941394165
     Path: event:/SFX/Player/SFX_Player_Footsteps
-  _footstepsInterval: 1
+  _footstepsInterval: 0.6
 --- !u!114 &9186955265984238306
 MonoBehaviour:
   m_ObjectHideFlags: 0

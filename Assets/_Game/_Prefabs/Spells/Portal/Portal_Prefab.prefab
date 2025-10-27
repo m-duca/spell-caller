@@ -9885,6 +9885,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   _playerRealocateDistance: 2
+  _teleportEventReference:
+    Guid:
+      Data1: 486753501
+      Data2: 1115969793
+      Data3: -564074086
+      Data4: -87602286
+    Path: event:/SFX/Spells/SFX_Portal_Cast
 --- !u!1 &8428190135200983295
 GameObject:
   m_ObjectHideFlags: 0

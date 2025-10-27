@@ -22,3 +22,10 @@ MonoBehaviour:
   _shakeDelay: 0
   _shakeIntensity: 0
   _shakeDuration: 0
+  _sfxEventReference:
+    Guid:
+      Data1: 486753501
+      Data2: 1115969793
+      Data3: -564074086
+      Data4: -87602286
+    Path: event:/SFX/Spells/SFX_Portal_Cast

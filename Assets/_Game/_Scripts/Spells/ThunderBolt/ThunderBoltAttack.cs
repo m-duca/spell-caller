@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
 
 namespace SpellCaller
@@ -14,6 +15,9 @@ namespace SpellCaller
 
         [Header("Referências")]
         [SerializeField] private GameObject _thunderVfxPrefab;
+
+        [Header("SFX")]
+        [SerializeField] private EventReference _thunderBoltEventReference;
 
         // Não serializadas
         private List<GameObject> _thunders = new();
@@ -42,6 +46,8 @@ namespace SpellCaller
             Vector3 spawnPosition = colValue.bounds.center;
 
             _thunders.Add(Instantiate(_thunderVfxPrefab, spawnPosition, _thunderVfxPrefab.transform.rotation));
+
+            AudioManager.Instance?.PlayOneShot(_thunderBoltEventReference, spawnPosition);
         }
 
         private void OnDestroy()

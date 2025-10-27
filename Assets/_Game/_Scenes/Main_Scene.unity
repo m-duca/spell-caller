@@ -10502,10 +10502,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6155800142942686647, guid: 729117eafe827854bb5eca3064015605, type: 3}
-      propertyPath: _footstepsInterval
-      value: 0.6
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     m_RemovedGameObjects: []

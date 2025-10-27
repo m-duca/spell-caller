@@ -22,3 +22,10 @@ MonoBehaviour:
   _shakeDelay: 0
   _shakeIntensity: 0.4
   _shakeDuration: 0.2
+  _sfxEventReference:
+    Guid:
+      Data1: 1997900699
+      Data2: 1296276162
+      Data3: 1250703807
+      Data4: 1004061522
+    Path: event:/SFX/Spells/SFX_IceShard_Cast

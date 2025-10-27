@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d570ac5991f39d419266735664b4cbe, type: 3}
-  m_Name: FireBall_SpellData
+  m_Name: Fireball_SpellData
   m_EditorClassIdentifier: Assembly-CSharp::SpellData
   _iconSpr: {fileID: 21300000, guid: 9d90bf0a6693bb34e8f78dcabb134549, type: 3}
   _name: Fogo
@@ -22,3 +22,10 @@ MonoBehaviour:
   _shakeDelay: 0
   _shakeIntensity: 1.2
   _shakeDuration: 0.85
+  _sfxEventReference:
+    Guid:
+      Data1: -304531782
+      Data2: 1317598785
+      Data3: 1606125233
+      Data4: -889105959
+    Path: event:/SFX/Spells/SFX_FireBall_Cast
