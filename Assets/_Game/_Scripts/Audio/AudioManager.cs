@@ -241,7 +241,7 @@ namespace SpellCaller
             RuntimeManager.PlayOneShotAttached(eventRefValue, targetValue);
         }
 
-        private EventInstance CreateEventInstance(EventReference eventRefValue)
+        public EventInstance CreateEventInstance(EventReference eventRefValue)
         {
             return RuntimeManager.CreateInstance(eventRefValue);
         }

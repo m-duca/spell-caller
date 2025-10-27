@@ -524,6 +524,14 @@ MonoBehaviour:
   _moveAction: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   _jumpAction: {fileID: -2099379676528639254, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   _cameraShake: {fileID: 8291035406395617212}
+  _footstepsEventRef:
+    Guid:
+      Data1: 1896600483
+      Data2: 1113443855
+      Data3: -803970410
+      Data4: 941394165
+    Path: event:/SFX/Player/SFX_Player_Footsteps
+  _footstepsInterval: 1
 --- !u!114 &9186955265984238306
 MonoBehaviour:
   m_ObjectHideFlags: 0

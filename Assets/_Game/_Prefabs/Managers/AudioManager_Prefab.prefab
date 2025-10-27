@@ -47,7 +47,7 @@ MonoBehaviour:
   _masterDefaultVolume: 1
   _ambienceDefaultVolume: 0.2
   _musicDefaultVolume: 0.4
-  _sfxDefaultVolume: 1
+  _sfxDefaultVolume: 0.6
   _ambienceEvents:
   - Guid:
       Data1: -283054205
