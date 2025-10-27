@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using DG.Tweening;
+using FMODUnity;
 
 namespace SpellCaller
 {
@@ -15,6 +16,9 @@ namespace SpellCaller
         [SerializeField] private float _rotationAngle;
         [SerializeField] private Color _damageColor;
         [SerializeField] private float _colorFlashDuration;
+
+        [Header("SFX")]
+        [SerializeField] private EventReference _hitEventReference;
 
         // Não serializadas
         private bool _canApplyContinuosDamage = true;
@@ -60,6 +64,8 @@ namespace SpellCaller
                         _renderer.material.DOColor(_originalColor, _colorFlashDuration)
                     );
             }
+
+            AudioManager.Instance?.PlayOneShot(_hitEventReference, transform.position);
 
             if (_currentLife <= 0)
                 Die();

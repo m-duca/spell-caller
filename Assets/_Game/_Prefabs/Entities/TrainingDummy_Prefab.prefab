@@ -195,6 +195,13 @@ MonoBehaviour:
   _rotationAngle: 360
   _damageColor: {r: 0.8207547, g: 0.25938943, b: 0.25938943, a: 1}
   _colorFlashDuration: 0.2
+  _hitEventReference:
+    Guid:
+      Data1: -799350837
+      Data2: 1170040296
+      Data3: -560350073
+      Data4: -884699983
+    Path: event:/SFX/TrainingDummy/SFX_TrainingDummy_Hit
 --- !u!1 &3726990614237854786
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,8 +349,6 @@ SkinnedMeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -365,7 +370,6 @@ SkinnedMeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0

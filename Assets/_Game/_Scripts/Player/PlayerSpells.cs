@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -92,7 +93,7 @@ namespace SpellCaller
 
         #region Spawn
 
-        public void SpawnSpell(SpellData dataValue, GameObject prefabValue, float distanceValue, float lifeTimeValue)
+        public void SpawnSpell(SpellData dataValue, GameObject prefabValue, float distanceValue, float lifeTimeValue, EventReference sfxValue)
         {
             Vector3 spawnPos = _cameraTransform.position + _cameraTransform.forward * distanceValue;
             Quaternion spawnRotation = _cameraTransform.rotation;
@@ -109,6 +110,10 @@ namespace SpellCaller
             StartCoroutine(ResetCanSpawn_Coroutine(dataValue.SpawnCooldown));
 
             CameraManager.Instance?.CameraShake.StartShake(dataValue.ShakeDelay, dataValue.ShakeIntensity, dataValue.ShakeDuration);
+
+            if (sfxValue.IsNull) return;
+            
+            AudioManager.Instance?.PlayOneShot(sfxValue, spawnPos);
         }
 
         private IEnumerator ResetCanSpawn_Coroutine(float cooldownValue)

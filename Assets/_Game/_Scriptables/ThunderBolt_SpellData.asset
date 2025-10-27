@@ -22,3 +22,10 @@ MonoBehaviour:
   _shakeDelay: 0.15
   _shakeIntensity: 1.8
   _shakeDuration: 0.6
+  _sfxEventReference:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 

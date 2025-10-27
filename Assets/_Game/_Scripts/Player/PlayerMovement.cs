@@ -1,3 +1,4 @@
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -30,10 +31,15 @@ namespace SpellCaller
         [SerializeField] private InputActionReference _jumpAction;
         [SerializeField] private CameraShake _cameraShake;
 
+        [Header("SFX")]
+        [SerializeField] private EventReference _footstepsEventRef;
+        [SerializeField] private float _footstepsInterval;
+
         // Não serializadas
         private Vector2 _moveInput = Vector2.zero;
         private Vector3 _curSpeed = Vector3.zero;
         private float _curGravity;
+        private bool _canPlayFootsteps = true; 
 
         private void OnValidate() => _characterController = GetComponent<CharacterController>();
 
@@ -47,6 +53,7 @@ namespace SpellCaller
             ApplyGravity();
             HandleHeadBob();
             WalkAnimation();
+            HandleFootsteps();
         }
 
         #region Inputs
@@ -120,6 +127,24 @@ namespace SpellCaller
         {
             _animator.speed = IsMoving() ? 1f : 0f;
         }
+
+        #endregion
+
+        #region SFX
+        private void HandleFootsteps()
+        {
+            if (IsMoving() && _canPlayFootsteps)
+                PlayFootsteps();
+        }
+
+        private void PlayFootsteps()
+        {
+            AudioManager.Instance.PlayOneShot(_footstepsEventRef, transform.position);
+            _canPlayFootsteps = false;
+            Invoke(nameof(ResetCanPlayFootsteps), _footstepsInterval);
+        }
+
+        private void ResetCanPlayFootsteps() => _canPlayFootsteps = true;
 
         #endregion
     }
