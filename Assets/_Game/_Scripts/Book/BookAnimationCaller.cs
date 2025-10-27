@@ -1,4 +1,5 @@
 using DG.Tweening;
+using FMODUnity;
 using System.Collections;
 using UnityEngine;
 
@@ -18,6 +19,9 @@ namespace SpellCaller
 
         [Header("Referências")]
         [SerializeField] private Transform _playerMesh;
+
+        [Header("SFX")]
+        [SerializeField] private EventReference _flipEventReference;
 
         // Não serializadas
         private Animator _anim;
@@ -41,6 +45,8 @@ namespace SpellCaller
             _isFlipping = true;
 
             StartCoroutine(HideUIContent_Coroutine());
+
+            AudioManager.Instance?.PlayOneShot(_flipEventReference, transform.position);
 
             if (incrementValue == 1)
                 _anim.SetTrigger(ANIM_PARAM_FLIP_FORWARDS);

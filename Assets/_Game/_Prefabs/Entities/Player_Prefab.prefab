@@ -2664,6 +2664,26 @@ PrefabInstance:
       propertyPath: _hideUIDelay
       value: 0.74
       objectReference: {fileID: 0}
+    - target: {fileID: 8149275785765017885, guid: 62c8bc523ec0f6a45ab78441f35bed00, type: 3}
+      propertyPath: _flipEventReference.Path
+      value: event:/SFX/Book/SFX_Book_Flip
+      objectReference: {fileID: 0}
+    - target: {fileID: 8149275785765017885, guid: 62c8bc523ec0f6a45ab78441f35bed00, type: 3}
+      propertyPath: _flipEventReference.Guid.Data1
+      value: -934659050
+      objectReference: {fileID: 0}
+    - target: {fileID: 8149275785765017885, guid: 62c8bc523ec0f6a45ab78441f35bed00, type: 3}
+      propertyPath: _flipEventReference.Guid.Data2
+      value: 1197109785
+      objectReference: {fileID: 0}
+    - target: {fileID: 8149275785765017885, guid: 62c8bc523ec0f6a45ab78441f35bed00, type: 3}
+      propertyPath: _flipEventReference.Guid.Data3
+      value: 1181645214
+      objectReference: {fileID: 0}
+    - target: {fileID: 8149275785765017885, guid: 62c8bc523ec0f6a45ab78441f35bed00, type: 3}
+      propertyPath: _flipEventReference.Guid.Data4
+      value: 35580741
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
