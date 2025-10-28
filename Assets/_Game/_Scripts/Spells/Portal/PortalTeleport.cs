@@ -1,3 +1,4 @@
+using FMODUnity;
 using UnityEngine;
 
 namespace SpellCaller
@@ -9,6 +10,9 @@ namespace SpellCaller
     {
         [Header("Pârametros")]
         [SerializeField] private float _playerRealocateDistance;
+
+        [Header("SFX")]
+        [SerializeField] private EventReference _teleportEventReference;
 
         private void Start() => CheckPortalsOnScene();
 
@@ -43,9 +47,10 @@ namespace SpellCaller
 
                 Transform portalTransform = portal.gameObject.transform;
 
-                Vector3 newPlayerPos = portalTransform.position + portalTransform.forward * _playerRealocateDistance;
+                Vector3 newPlayerPos = portalTransform.position + PlayerManager.Instance.transform.forward * _playerRealocateDistance;
                 PlayerManager.Instance?.SetPosition(newPlayerPos);
                 CameraManager.Instance?.CameraRotation.ForceLookDirection(portalTransform.forward);
+                AudioManager.Instance?.PlayOneShot(_teleportEventReference, transform.position);
             }
         }
     }

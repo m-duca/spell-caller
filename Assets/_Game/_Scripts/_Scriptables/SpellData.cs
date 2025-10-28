@@ -1,3 +1,4 @@
+using FMODUnity;
 using UnityEngine;
 
 namespace SpellCaller
@@ -24,7 +25,8 @@ namespace SpellCaller
         [SerializeField] private float _shakeIntensity;
         [SerializeField] private float _shakeDuration;
 
-        [Header("UI Livro")]
+        [Header("SFX")]
+        [SerializeField] private EventReference _sfxEventReference;
 
         // Propriedades
         public Sprite IconSprite { get { return _iconSpr; } }
@@ -45,7 +47,7 @@ namespace SpellCaller
 
             Debug.Log($"<color=cyan>Lançando feitiço: {_name}</color>");
 
-            playerSpells.SpawnSpell(this, _effectPrefab, _spawnDistance, _spawnLifeTime);
+            playerSpells.SpawnSpell(this, _effectPrefab, _spawnDistance, _spawnLifeTime, _sfxEventReference);
         }
     }
 }

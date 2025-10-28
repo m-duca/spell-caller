@@ -46,6 +46,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   _impactDamage: 1
   _searchRadius: 10
-  _thunderRayOriginDistance: 5
-  _thunderSpawnOffset: {x: 0, y: 0, z: 0}
   _thunderVfxPrefab: {fileID: 5627696518775099638, guid: f0481abd34f0f8345874c3aa84513aba, type: 3}
+  _thunderBoltEventReference:
+    Guid:
+      Data1: -612656376
+      Data2: 1227039265
+      Data3: 476477882
+      Data4: 921314562
+    Path: event:/SFX/Spells/SFX_ThunderBolt
