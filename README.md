@@ -1,11 +1,12 @@
 # 🧙‍♂️ Spell Caller  
+![Demonstração do sistema de conjuração por voz](./ReadmeAssets/casting_portal.gif)
 
 **Spell Caller** é um protótipo desenvolvido na Unity com foco em experimentação de mecânicas que são ativadas a partir do reconhecimento de voz com palavras-chave.  
-
 
 ---
 
 ## 🎯 Objetivo do Projeto
+![Demonstração do sistema de conjuração por voz](./ReadmeAssets/casting_thunder.gif)
 
 Inspirado em jogos como **[Mage Arena](https://store.steampowered.com/app/3716600/Mage_Arena)**, o objetivo principal foi desenvolver um sistema de magias customizável onde o jogador tenha que ler o feitiço em voz alta para conjurá-lo. Além disso, o projeto é um exercício de arquitetura limpa e boas práticas de programação em Unity.
 
