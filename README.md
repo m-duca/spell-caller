@@ -37,7 +37,32 @@ Inspirado em jogos como **[Mage Arena](https://store.steampowered.com/app/371660
 
 ## 📦 Créditos de Assets
 
-- **Nome do Asset** – Autor / Link   
+### Props
+- **[Low Poly Casual Magic Book](https://assetstore.unity.com/packages/3d/props/low-poly-casual-magic-book-289381)** – Revereel Studio
+- **[Low_Poly Nature](https://assetstore.unity.com/packages/3d/environments/low-poly-nature-260306)** – Oode Studios
+- **[Lowpoly training dummy](https://assetstore.unity.com/packages/3d/props/lowpoly-training-dummy-202311)** – iltaen
+- **[Magic Effects FREE](https://assetstore.unity.com/packages/p/magic-effects-free-247933)** – Hovl Studio
+- **[Mountain Terrain, Rocks and Tree](https://assetstore.unity.com/packages/3d/environments/landscapes/mountain-terrain-rocks-and-tree-97905)** – Jermesa Studio
+- **[Particle Pack](https://assetstore.unity.com/packages/vfx/particles/particle-pack-127325)** – Unity Technologies
+- **[Rocks and Terrains Pack - Low Poly](https://assetstore.unity.com/packages/3d/environments/rocks-and-terrains-pack-low-poly-281733)** – HQP Studios
+- **[Zap VFX - URP](https://assetstore.unity.com/packages/vfx/particles/spells/zap-vfx-urp-303479)** – Vefects
+
+### Sons
+- **[Floating In The Midnight Breeze](https://freesound.org/people/FoolBoyMedia/sounds/332323)** – FoolBoyMedia
+- **[AMBForst_Autumn.A Quiet Forest.Wind In The Pines And Birches.Byrds 3_EM](https://freesound.org/people/newlocknew/sounds/757872)** – newlocknew
+- **[Fireball Cast 1](https://freesound.org/people/LiamG_SFX/sounds/334234)** – LiamG_SFX
+- **[Icy Magic Cast](https://freesound.org/people/DustyWind/sounds/691005)** – DustyWind
+- **[Freeze Cast](https://freesound.org/people/JustInvoke/sounds/446144)** – JustInvoke
+- **[Magic - Spell casting 02](https://freesound.org/people/Vrymaa/sounds/770233)** – Vrymaa
+- **[Knife](https://freesound.org/people/Zenleser/sounds/533573)** – Zenleser
+- **[OneThunder.wav](https://freesound.org/people/marcosdegodoy/sounds/372880)** – marcosdegodoy
+- **[Electric Shock 2 Hit](https://freesound.org/people/The-Sacha-Rush/sounds/657803)** – The-Sacha-Rush
+- **[Mouth_Lightening.wav](https://freesound.org/people/Deganoth/sounds/165908)** – Deganoth
+- **[01903 air swoosh.wav](https://freesound.org/people/Robinhood76/sounds/101386)** – Robinhood76
+- **[PAPRHndl-Samsung Galaxy Smartphone, MCU_Newspaper, Page Flip_Nicholas Judy_TDC](https://freesound.org/people/designerschoice/sounds/810142)** – designerschoice
+- **[Bike Drop Front Tire 1](https://freesound.org/people/Geoff-Bremner-Audio/sounds/730973)** – Geoff-Bremner-Audio
+- **[Bike Drop Front Tire 2](https://freesound.org/people/Geoff-Bremner-Audio/sounds/730974)** – Geoff-Bremner-Audio
+- **[hit-wood03.wav](https://freesound.org/people/JanKoehl/sounds/85584)** – JanKoehl
 
 ---
 
