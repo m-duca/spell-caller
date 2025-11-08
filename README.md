@@ -25,8 +25,10 @@ Inspirado em jogos como **[Mage Arena](https://store.steampowered.com/app/371660
 
 ## 📊 Status Atual
 
-🔹 **Fase:** Protótipo de Estudo / Desenvolvimento Ativo  
+🔹 **Fase:** Base finalizada 
+
 🔹 **Foco atual:** Demonstrar o resultado atingido com as conjunrações de magias
+
 🔹 **Próximos passos:**  
 - Build pública
 - Implementação de novos feitiços e inimigos  
